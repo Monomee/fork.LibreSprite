@@ -1,0 +1,39 @@
+# Danh sách nhiệm vụ dự án MonoSprite AI Extension
+
+- `[ ]` **Task 1: Cơ sở hạ tầng mạng & API Client (Network Infrastructure)**
+  - `[ ]` Tạo file `ai_client.h` và `ai_client.cpp`
+  - `[ ]` Triển khai các phương thức POST JSON và Multipart Form-Data sử dụng `net::HttpRequest`
+  - `[ ]` Tích hợp thư viện JSON header-only để parse kết quả
+  - `[ ]` Viết unit test cơ bản kiểm tra kết nối API
+- `[ ]` **Task 2: Sinh bảng màu thông minh (Smart Palette Generator)**
+  - `[ ]` Tạo lệnh `palette_generator_cmd.cpp`
+  - `[ ]` Triển khai UI popup nhập prompt sinh màu
+  - `[ ]` Kết nối API và cập nhật bảng màu (`doc::Palette`) của sprite hiện tại
+- `[ ]` **Task 3: Thiết kế Bố cục Giao diện Sidebar AI (UI Layout & Base Panels)**
+  - `[ ]` Sửa đổi file XML layout `main_window.xml` để thêm Splitter và placeholder cho sidebar
+  - `[ ]` Tạo class `AiSidebar` C++ chứa các Widget: Entry, Button, ComboBox, View
+  - `[ ]` Đăng ký và hiển thị `AiSidebar` trong `MainWindow`
+- `[ ]` **Task 4: Prompt tạo nhân vật/cảnh vật (Text-to-Image / Text-to-PixelArt)**
+  - `[ ]` Kết nối sự kiện nút gửi ở Sidebar với API Stable Diffusion
+  - `[ ]` Giải mã PNG Base64 trả về thành `doc::Image`
+  - `[ ]` Tạo Layer và Cel mới để đưa ảnh lên canvas
+- `[ ]` **Task 5: Upload file để biến đổi (Image-to-Image / Pixelization)**
+  - `[ ]` Xử lý chức năng xuất frame hiện tại ra ảnh tạm hoặc chọn file từ máy tính
+  - `[ ]` Gửi ảnh qua API Img2Img / ControlNet để pixel hóa
+  - `[ ]` Cập nhật lại canvas với kết quả mới
+- `[ ]` **Task 6: Seamless Tile Generator (Tạo Map lặp vô tận)**
+  - `[ ]` Triển khai API sinh ảnh với tham số `tiling=true`
+  - `[ ]` Tự động chuyển canvas sang chế độ Tiled Mode để hiển thị kết quả
+- `[ ]` **Task 7: Tạo Animation từ Prompt/Ảnh (Text/Image-to-Animation)**
+  - `[ ]` Gửi yêu cầu sinh animation nhận về file GIF
+  - `[ ]` Triển khai parser giải mã tệp GIF thành các frame ảnh rời rạc
+  - `[ ]` Thêm các Frame tương ứng vào Timeline của MonoSprite
+- `[ ]` **Task 8: Tách layer cho frame thành các thành phần (Layer Segmentation)**
+  - `[ ]` Gọi API Segment Anything Model (SAM) để nhận về các mask bộ phận
+  - `[ ]` Cắt ảnh gốc thành các Layer riêng biệt dựa trên tọa độ mask
+- `[ ]` **Task 9: Nội suy frame hoạt ảnh (AI Pixel-Inbetweening)**
+  - `[ ]` Gửi 2 keyframe lên API nội suy để nhận về các frame trung gian
+  - `[ ]` Chèn tự động các frame trung gian này vào giữa keyframe trên Timeline
+- `[ ]` **Task 10: Export Sprite Sheet tích hợp**
+  - `[ ]` Triển khai thuật toán Bin Packing xếp các frame hoạt ảnh vào 1 ảnh duy nhất
+  - `[ ]` Xuất file ảnh Sprite Sheet (.png) kèm cấu hình JSON tọa độ
