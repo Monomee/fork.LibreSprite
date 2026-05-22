@@ -11,6 +11,8 @@
 
 #include "app/ui/main_window.h"
 
+#include "app/ui/ai_sidebar.h"
+
 #include "app/app.h"
 #include "app/app_menus.h"
 #include "app/commands/commands.h"
@@ -50,6 +52,7 @@ MainWindow::MainWindow()
   : m_mode(NormalMode)
   , m_homeView(nullptr)
   , m_devConsoleView(nullptr)
+  , m_aiSidebar(nullptr)
 {
   // Load all menus by first time.
   AppMenus::instance()->reload();
@@ -114,6 +117,12 @@ MainWindow::MainWindow()
   // Default splitter positions
   colorBarSplitter()->setPosition(m_colorBar->sizeHint().w);
   timelineSplitter()->setPosition(75);
+
+  // AI Sidebar
+  m_aiSidebar = new AiSidebar();
+  m_aiSidebar->setExpansive(true);
+  aiSidebarPlaceholder()->addChild(m_aiSidebar);
+  aiSidebarSplitter()->setPosition(80);
 
   bool verticalTimeline = Preferences::instance().general.verticalTimeline();
   if (!has_config_value("general", "vertical_timeline")) {
@@ -194,6 +203,8 @@ MainWindow::~MainWindow()
   // Remove the root-menu from the menu-bar (because the rootmenu
   // module should destroy it).
   m_menuBar->setMenu(NULL);
+
+  delete m_aiSidebar;
 }
 
 DocumentView* MainWindow::getDocView()

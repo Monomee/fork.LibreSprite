@@ -429,6 +429,7 @@ add_library(app-lib
   ui/input_chain.cpp
   ui/keyboard_shortcuts.cpp
   ui/main_menu_bar.cpp
+  ui/ai_sidebar.cpp
   ui/main_window.cpp
   ui/notifications.cpp
   ui/palette_popup.cpp

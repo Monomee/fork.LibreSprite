@@ -18,6 +18,7 @@ namespace ui {
 
 namespace app {
 
+  class AiSidebar;
   class ColorBar;
   class TouchBar;
   class ContextBar;
@@ -113,6 +114,7 @@ namespace app {
     HomeView* m_homeView;
     DevConsoleView* m_devConsoleView;
     Notifications* m_notifications;
+    AiSidebar* m_aiSidebar;
   };
 
 }

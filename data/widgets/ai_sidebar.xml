@@ -1,0 +1,29 @@
+<!-- MonoSprite AI Extension -->
+<!-- AI Sidebar panel layout -->
+<gui>
+<vbox id="ai_sidebar" noborders="true">
+  <separator text="AI Assistant" horizontal="true" />
+
+  <!-- Model selector -->
+  <hbox>
+    <label text="Model:" />
+    <combobox id="model_selector" expansive="true" />
+  </hbox>
+
+  <separator horizontal="true" />
+
+  <!-- Chat history area -->
+  <view id="chat_view" expansive="true" />
+
+  <separator horizontal="true" />
+
+  <!-- Prompt input area -->
+  <entry id="prompt_entry" expansive="true" maxsize="4096" magnet="true" text="" />
+
+  <!-- Action buttons -->
+  <hbox>
+    <button id="send_btn" text="&amp;Send" minwidth="60" />
+    <button id="upload_btn" text="&amp;Upload" minwidth="60" />
+  </hbox>
+</vbox>
+</gui>
