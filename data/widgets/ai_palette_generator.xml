@@ -1,0 +1,20 @@
+<!-- MonoSprite AI Extension -->
+<gui>
+<window text="Smart Palette Generator" id="ai_palette_generator">
+  <grid columns="3">
+    <label text="Prompt:" />
+    <entry expansive="true" id="prompt" cell_hspan="2" magnet="true" text="sunset over the ocean, warm tones" />
+
+    <label text="Number of colors:" />
+    <entry maxsize="4" maxwidth="50" id="colors_count" text="16" />
+    <box cell_align="horizontal" />
+
+    <separator horizontal="true" cell_hspan="3" />
+
+    <box horizontal="true" homogeneous="true" cell_hspan="3" cell_align="right">
+      <button text="&amp;Generate" closewindow="true" id="generate" magnet="true" minwidth="80" />
+      <button text="&amp;Cancel" closewindow="true" />
+    </box>
+  </grid>
+</window>
+</gui>
